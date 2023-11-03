@@ -8,7 +8,6 @@ class DigitClassifier(nn.Module):
         super().__init__()
 
         self.net = nn.Sequential(
-            nn.Flatten(end_dim=-1),
             nn.Linear(in_features=784, out_features=256),
             nn.ReLU(),
             nn.Linear(in_features=256, out_features=64),

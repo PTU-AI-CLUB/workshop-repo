@@ -79,15 +79,10 @@ def train(model: nn.Module,
                                            loss_fn=loss_fn,
                                            optimizer=optimizer,
                                            dataloader=train_dataloader)
-        test_loss, test_acc = eval_step(model=model,
-                                        loss_fn=loss_fn,
-                                        dataloader=test_dataloader)
         
-        print(f"epoch {epoch} train_loss:{train_loss:.3f} train_acc:{train_acc} test_loss:{test_loss:.3f} test_acc:{test_acc}")
+        print(f"epoch {epoch} train_loss:{train_loss:.3f} train_acc:{train_acc}")
         results["train_loss"].append(train_loss)
-        results["test_loss"].append(test_loss)
         results["train_acc"].append(train_acc)
-        results["test_acc"].append(test_acc)
     
     return results
 
